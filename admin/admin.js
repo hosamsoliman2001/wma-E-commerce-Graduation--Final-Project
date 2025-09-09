@@ -41,7 +41,57 @@
       productsTable.appendChild(tr);
     });
   }
+function loadProducts() {
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+  productsTable.innerHTML = "";
+  products.forEach((p, idx) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><img src="${p.image || "https://via.placeholder.com/50"}"></td>
+      <td>${escapeHtml(p.title)}</td>
+      <td>${p.price.toFixed(2)} $</td>
+      <td>${p.category || "-"}</td>
+      <td>
+        <button class="action-btn" data-edit="${idx}">✏️ تعديل</button>
+        <button class="action-btn danger" data-del="${idx}">🗑 حذف</button>
+      </td>
+    `;
 
+    // زر التعديل
+    tr.querySelector("[data-edit]").addEventListener("click", () => editProduct(idx));
+
+    // زر الحذف
+    tr.querySelector("[data-del]").addEventListener("click", () => deleteProduct(idx));
+
+    productsTable.appendChild(tr);
+  });
+}
+
+function editProduct(idx) {
+  let products = JSON.parse(localStorage.getItem("products")) || [];
+  let product = products[idx];
+
+  const newTitle = prompt("اسم المنتج:", product.title);
+  const newPrice = parseFloat(prompt("السعر:", product.price));
+  const newImage = prompt("رابط الصورة:", product.image);
+  const newCategory = prompt("الفئة:", product.category);
+
+  if (!newTitle || isNaN(newPrice)) {
+    return alert("⚠️ بيانات غير صحيحة");
+  }
+
+  products[idx] = {
+    ...product,
+    title: newTitle,
+    price: newPrice,
+    image: newImage,
+    category: newCategory
+  };
+
+  localStorage.setItem("products", JSON.stringify(products));
+  loadProducts();
+  loadStats();
+}
   function loadOrders() {
     const orders = JSON.parse(localStorage.getItem("orders")) || [];
     ordersTable.innerHTML = "";
