@@ -74,18 +74,31 @@
     localStorage.setItem("currentUser", JSON.stringify(user));
     window.location.href = "../products/products.html";
   });
+  const authBox = document.getElementById("authBox");
+  const showBtn = document.getElementById("showBtn");
 
-  // ✅ تسجيل الدخول كمشرف مباشرة
-  document.getElementById("adminLoginBtn").addEventListener("click", () => {
-    const adminUser = {
-      username: "admin",
-      email: "admin@wma.com",
-      password: "123456",
-      isAdmin: true
-    };
-
-    localStorage.setItem("currentUser", JSON.stringify(adminUser));
-    alert("✅ تم تسجيل الدخول كمشرف!");
-    window.location.href = "../admin/admin.html";
+  showBtn.addEventListener("click", () => {
+    authBox.style.display = "block";   // يظهر الفورم
+    showBtn.style.display = "none";    // يخفي الزر بعد ما يضغط عليه
   });
+
+// ✅ تسجيل الدخول كمشرف مع التحقق
+document.getElementById("adminLoginBtn").addEventListener("click", () => {
+  const email = document.getElementById("adminEmail").value.trim();
+  const password = document.getElementById("adminPass").value;
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const adminUser = users.find(u => u.isAdmin && u.email === email && u.password === password);
+
+  if (!adminUser) {
+    alert("⚠️ بيانات المشرف غير صحيحة");
+    return;
+  }
+
+  localStorage.setItem("currentUser", JSON.stringify(adminUser));
+  alert("✅ تم تسجيل الدخول كمشرف!");
+  window.location.href = "../admin/admin.html";
+});
 })();
+
+

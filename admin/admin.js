@@ -134,7 +134,6 @@ function editProduct(idx) {
       "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
     }[m])) : "";
   }
-
   document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user || !user.isAdmin) {
@@ -147,3 +146,4 @@ function editProduct(idx) {
     loadOrders();
   });
 })();
+

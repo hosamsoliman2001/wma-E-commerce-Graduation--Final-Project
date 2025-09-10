@@ -25,10 +25,7 @@
       <input type="password" id="loginPassword" placeholder="كلمة المرور" />
       <button id="loginBtn">دخول</button>
      
-      <!-- ✅ زر الدخول كمشرف -->
-      <button id="adminLoginBtn" style="background:#e67e22; margin-top:10px;">
-        🚀 دخول كمشرف
-      </button>
+      
 
       <p style="text-align:center; margin-top:10px;">
         لا تملك حساب؟ <a href="#" id="showRegister">سجل الآن</a>
@@ -46,7 +43,23 @@
         لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a>
       </p>
     </div>
+
+<DIV class="auth-box" id="authBox" style="display:none;"> 
+  <input  type="email" id="adminEmail" placeholder="بريد المشرف">
+  <input type="password" id="adminPass" placeholder="كلمة مرور المشرف">
+  <button id="adminLoginBtn" style="background:#e67e22; margin-top:10px;">
+        🚀 دخول كمشرف
+  </button>
+</DIV>
+
+<!-- زرار إظهار -->
+<button id="showBtn" style="margin-top:15px; background:#27ae60; color:#fff;">
+تسجيل الدخول كمشرف
+</button>
+
   </main>
+
+
 
   <script src="auth.js"></script>
   <script src="../theme.js"></script>
