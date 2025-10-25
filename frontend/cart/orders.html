@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الطلبات</title>
+  <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="order.css">
+
+</head>
+<body>
+  <header class="navbar">
+    <nav id="navbarLinks">
+      <a href="../products/products.html">المنتجات</a>
+      <a href="../cart/cart.html">عربة التسوق (<span id="cartCount">0</span>)</a>
+      <a href="../admin/admin.html">الإدارة</a>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main class="orders-container">
+    <header class="orders-hero surface-card">
+      <div class="hero-text">
+        <h1>قائمة الطلبات</h1>
+      </div>
+      <div class="hero-highlight">
+        <span>📦</span>
+        <h2 id="ordersCount">0</h2>
+        <p>إجمالي الطلبات</p>
+      </div>
+    </header>
+
+    <section class="orders-section surface-card">
+      <div class="card-header">
+        <h3>🧾 جميع الطلبات</h3>
+      </div>
+      <div id="ordersList" class="orders-list"></div>
+    </section>
+  </main>
+
+  <script src="orders.js"></script>
+  <script src="../theme.js"></script>
+  <script src="../navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+/* ====== صفحة المشرف ====== */
+.admin-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+}
+.admin-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: var(--navbar-text);
+}
+
+/* الإحصائيات */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.68), rgba(226,232,240,0.35));
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 18px 36px rgba(15,23,42,0.15);
+  border: 1px solid rgba(148,163,184,0.25);
+  text-align: start;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(59,130,246,0.22), transparent 58%);
+  pointer-events: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 42px rgba(79,70,229,0.18);
+}
+
+.stat-card h3 {
+  position: relative;
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: rgba(30,41,59,0.8);
+  z-index: 1;
+}
+
+.stat-card p {
+  position: relative;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  z-index: 1;
+}
+
+/* الأقسام */
+.admin-section {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 32px;
+  box-shadow: none;
+}
+.admin-section h3 {
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+/* ====== تصميم عصري لإدارة المنتجات ====== */
+.product-management {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.product-management .section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.product-management .section-header h3 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.product-management .section-subtitle {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: rgba(100,116,139,0.85);
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 22px;
+}
+
+.surface-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.65), rgba(243,244,255,0.25));
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 45px rgba(15,23,42,0.18);
+  border: 1px solid rgba(148,163,184,0.18);
+  overflow: hidden;
+}
+
+.surface-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top left, rgba(59,130,246,0.2), transparent 55%);
+  opacity: 0.85;
+}
+
+.surface-card .card-header {
+  position: relative;
+  z-index: 1;
+  padding: 10px 16px 0;
+}
+
+.surface-card .card-header h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-color);
+}
+
+.product-form {
+  position: relative;
+  z-index: 1;
+  padding: 12px 16px 20px;
+}
+
+.product-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.product-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-form .field span {
+  font-size: 0.9rem;
+  color: rgba(71,85,105,0.95);
+  font-weight: 600;
+}
+
+.soft-input {
+  border-radius: 14px;
+  border: 1px solid rgba(148,163,184,0.3);
+  padding: 12px 14px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(226,232,240,0.45));
+  box-shadow: inset 0 2px 6px rgba(148,163,184,0.18), 0 12px 24px rgba(15,23,42,0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  color: var(--text-color);
+}
+
+.soft-input:focus {
+  outline: none;
+  transform: translateY(-1px);
+  border-color: rgba(59,130,246,0.65);
+  box-shadow: inset 0 2px 8px rgba(59,130,246,0.18), 0 16px 30px rgba(59,130,246,0.18);
+}
+
+.soft-input::placeholder {
+  color: rgba(100,116,139,0.6);
+}
+
+.product-form textarea.soft-input {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.product-form .form-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.product-form .form-message {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.product-form .form-message.success {
+  color: #10b981;
+}
+
+.product-form .form-message.error {
+  color: #ef4444;
+}
+
+.table-card {
+  padding: 12px 0 18px;
+}
+
+.table-card .table-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 0 18px 14px;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 420px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59,130,246,0.5) rgba(148,163,184,0.25);
+}
+
+.table-card .table-wrapper::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.table-card .table-wrapper::-webkit-scrollbar-track {
+  background: rgba(148,163,184,0.2);
+  border-radius: 999px;
+}
+
+.table-card .table-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(59,130,246,0.8), rgba(124,58,237,0.8));
+  border-radius: 999px;
+}
+
+.table-card .table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(109,40,217,0.9));
+}
+
+.table-card table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+}
+
+.table-card thead tr {
+  background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(124,58,237,0.12));
+}
+
+.table-card th,
+.table-card td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(148,163,184,0.18);
+  text-align: center;
+}
+
+.table-card tbody tr:hover {
+  background: rgba(148,163,184,0.12);
+}
+
+.table-card td img {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 16px 32px rgba(15,23,42,0.18);
+}
+
+/* الجداول */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+th {
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
+}
+td img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  font-weight: 600;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  box-shadow: 0 10px 25px rgba(59,130,246,0.25);
+}
+.action-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 32px rgba(59,130,246,0.28);
+}
+.action-btn.danger {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  box-shadow: 0 10px 25px rgba(239,68,68,0.25);
+}
+.action-btn.danger:hover {
+  box-shadow: 0 16px 32px rgba(239,68,68,0.28);
+}
+
+@media (max-width: 980px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-layout .form-card {
+    order: 2;
+  }
+
+  .product-layout .table-card {
+    order: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .product-management .section-subtitle {
+    color: rgba(226,232,240,0.7);
+  }
+
+  .surface-card {
+    background: linear-gradient(135deg, rgba(30,41,59,0.75), rgba(15,23,42,0.78));
+    border: 1px solid rgba(148,163,184,0.28);
+    box-shadow: 0 24px 45px rgba(8,15,35,0.45);
+  }
+
+  .surface-card::after {
+    background: radial-gradient(circle at top left, rgba(96,165,250,0.28), transparent 60%);
+  }
+
+  .soft-input {
+    background: linear-gradient(135deg, rgba(30,41,59,0.85), rgba(15,23,42,0.65));
+    border-color: rgba(148,163,184,0.35);
+    color: var(--text-color);
+    backdrop-filter: blur(16px);
+  }
+
+  .soft-input::placeholder {
+    color: rgba(148,163,184,0.55);
+  }
+
+  .table-card thead tr {
+    background: linear-gradient(135deg, rgba(96,165,250,0.18), rgba(167,139,250,0.16));
+  }
+
+  .table-card tbody tr:hover {
+    background: rgba(226,232,240,0.08);
+  }
+}

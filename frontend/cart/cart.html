@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>عربة التسوق - WMA</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div id="navbarLinks"></div>
+  </header>
+
+  <main class="cart-page">
+    <section class="cart-hero surface-card">
+      <div class="hero-content">
+        <h1><span>🛒</span> عربة التسوق</h1>
+        <p>راجع مشترياتك واستكمل عملية الدفع في سلاسة وشفافة.</p>
+        <div id="loginReminder" class="login-reminder hidden">
+          ⚠️ يجب تسجيل الدخول لإتمام الشراء
+        </div>
+      </div>
+      <div class="hero-highlight">
+        <span>💳</span>
+        <h2 id="cartItemsCount">0</h2>
+        <p>منتج في السلة</p>
+      </div>
+    </section>
+
+    <section class="cart-content surface-card">
+      <div id="cartItems" class="cart-items"></div>
+    </section>
+
+    <section class="cart-summary surface-card">
+      <div class="summary-header">
+        <h3>ملخص الطلب</h3>
+      </div>
+      <p><strong>الإجمالي:</strong> <span id="cartTotal">0</span> $</p>
+      <div class="cart-actions">
+        <button class="action-btn danger" id="clearCart">إفراغ العربة</button>
+        <button class="action-btn" id="checkoutBtn">إتمام الشراء</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="../navbar.js"></script>
+  <script src="../theme.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>

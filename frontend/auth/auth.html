@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>تسجيل الدخول / التسجيل - WMA</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container" onclick="window.location.href='../index.html'">
+      <img src="../assets/logo.png" alt="Logo" class="logo-small" />
+      <span class="brand-name">WMA</span>
+    </div>
+    <nav id="navbarLinks"></nav>
+     <button id="themeToggle">🌙</button>
+
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-hero surface-card">
+      <div class="hero-text">
+        <h1>مرحباً بك في WMA</h1>
+        <p>سجّل الدخول للوصول إلى كل المزايا أو أنشئ حساباً جديداً خلال ثوانٍ معدودة.</p>
+      </div>
+      <div class="hero-highlight">
+        <span>🔐</span>
+        <h2>أمان كامل</h2>
+        <p>حماية للبيانات وتسجيل سريع</p>
+      </div>
+    </section>
+
+    <section class="auth-panels surface-card">
+      <div class="forms-stack">
+        <!-- ✅ صندوق تسجيل الدخول -->
+        <div class="auth-box" id="loginBox">
+          <h2>تسجيل الدخول</h2>
+          <input class="soft-input" id="loginEmail" placeholder="البريد الإلكتروني أو اسم المستخدم" />
+          <input class="soft-input" type="password" id="loginPassword" placeholder="كلمة المرور" />
+          <button class="primary-btn" id="loginBtn">دخول</button>
+          <p class="switch-link">
+            لا تملك حساب؟ <a href="#" id="showRegister">سجل الآن</a>
+          </p>
+        </div>
+
+        <!-- ✅ صندوق إنشاء حساب -->
+        <div class="auth-box" id="registerBox" style="display:none;">
+          <h2>إنشاء حساب</h2>
+          <input class="soft-input" id="regName" placeholder="اسم المستخدم" />
+          <input class="soft-input" id="regEmail" placeholder="البريد الإلكتروني" />
+          <input class="soft-input" type="password" id="regPass" placeholder="كلمة المرور" />
+          <button class="primary-btn" id="registerBtn">تسجيل</button>
+          <p class="switch-link">
+            لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="admin-box" id="authBox" style="display:none;">
+        <h3>دخول المشرف</h3>
+        <input class="soft-input" type="email" id="adminEmail" placeholder="بريد المشرف" />
+        <input class="soft-input" type="password" id="adminPass" placeholder="كلمة مرور المشرف" />
+        <button class="accent-btn" id="adminLoginBtn">🚀 دخول كمشرف</button>
+      </div>
+
+      <button class="outline-btn" id="showBtn">تسجيل الدخول كمشرف</button>
+    </section>
+  </main>
+
+
+
+  <script src="auth.js"></script>
+  <script src="../theme.js"></script>
+</body>
+</html>

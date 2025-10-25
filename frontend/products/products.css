@@ -1,0 +1,209 @@
+/* ====== صفحة المنتجات ====== */
+.products-page {
+  max-width: 1150px;
+  margin: 30px auto;
+  padding: 0 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.surface-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(226,232,240,0.4));
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148,163,184,0.25);
+  box-shadow: 0 24px 45px rgba(15,23,42,0.18);
+  overflow: hidden;
+}
+
+.surface-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(59,130,246,0.15), transparent 62%);
+  pointer-events: none;
+}
+
+.products-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.products-hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.products-hero h1 {
+  margin: 0 0 10px;
+  font-size: 2.1rem;
+  color: var(--text-color);
+}
+
+.products-hero p {
+  margin: 0;
+  color: rgba(100,116,139,0.85);
+  font-size: 1rem;
+}
+
+.products-hero .hero-stats {
+  position: relative;
+  z-index: 1;
+}
+
+.products-hero .stat-card {
+  min-width: 150px;
+  padding: 16px 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(124,58,237,0.18));
+  border: 1px solid rgba(59,130,246,0.22);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+  text-align: center;
+}
+
+.products-hero .stat-card span {
+  font-size: 2rem;
+}
+
+.products-hero .stat-card h2 {
+  margin: 6px 0 0;
+  font-size: 2.3rem;
+  color: var(--text-color);
+}
+
+.products-hero .stat-card p {
+  margin: 4px 0 0;
+  color: rgba(71,85,105,0.8);
+  font-size: 0.95rem;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.soft-input {
+  border-radius: 14px;
+  border: 1px solid rgba(148,163,184,0.3);
+  padding: 12px 14px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(226,232,240,0.45));
+  box-shadow: inset 0 2px 6px rgba(148,163,184,0.18), 0 12px 24px rgba(15,23,42,0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  color: var(--text-color);
+  min-width: 220px;
+}
+
+.soft-input:focus {
+  outline: none;
+  transform: translateY(-1px);
+  border-color: rgba(59,130,246,0.65);
+  box-shadow: inset 0 2px 8px rgba(59,130,246,0.18), 0 16px 30px rgba(59,130,246,0.18);
+}
+
+.glass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.68), rgba(226,232,240,0.35));
+  border: 1px solid rgba(148,163,184,0.22);
+  box-shadow: 0 18px 36px rgba(15,23,42,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 42px rgba(79,70,229,0.22);
+}
+
+.product-card img {
+  max-width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(15,23,42,0.18));
+}
+
+.product-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  min-height: 48px;
+  color: var(--text-color);
+}
+
+.product-card p {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.product-card button {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  box-shadow: 0 12px 26px rgba(79,70,229,0.22);
+}
+
+.product-card button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 34px rgba(79,70,229,0.28);
+}
+
+@media (max-width: 768px) {
+  .products-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products-hero .stat-card {
+    align-self: stretch;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .surface-card {
+    background: linear-gradient(135deg, rgba(30,41,59,0.78), rgba(15,23,42,0.72));
+    border: 1px solid rgba(148,163,184,0.28);
+    box-shadow: 0 24px 45px rgba(8,15,35,0.45);
+  }
+
+  .surface-card::after {
+    background: radial-gradient(circle at top left, rgba(96,165,250,0.28), transparent 70%);
+  }
+
+  .products-hero p,
+  .products-hero .stat-card p {
+    color: rgba(226,232,240,0.75);
+  }
+
+  .product-card {
+    background: linear-gradient(135deg, rgba(30,41,59,0.75), rgba(15,23,42,0.68));
+    border: 1px solid rgba(148,163,184,0.28);
+  }
+
+  .product-card p {
+    color: rgba(226,232,240,0.88);
+  }
+}
