@@ -12,7 +12,7 @@ const { apiLimiter } = require("./middleware/rateLimit");
 const errorHandler = require("./middleware/errorHandler");
 const swaggerSpec = require("./docs/swagger");
 
-const FRONTEND_DIR = path.resolve(__dirname, "..", "..", "frontend");
+const FRONTEND_DIR = path.resolve(__dirname, "..", "..");
 const IMAGES_DIR = path.resolve(__dirname, "..", "images");
 
 const authRoutes = require("./routes/authRoutes");
